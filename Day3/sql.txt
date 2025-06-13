@@ -1,0 +1,58 @@
+Database create
+Table create
+Data insert
+Show data
+
+Query - Category
+DDL - table structure
+DML - data in table
+DQL - read
+
+DD
+Students
+	- name
+	- marks
+	- dob
+	- class
+	- subject
+
+D
+Name: Ramesh, Marks: 85%, Dob: 23Jun2012, Class: 9A, Subject: Math
+
+
+Create table
+=> create table Students(
+	name varchar(30),
+	marks int,
+	dob date,
+	class varchar(4),
+	subject varchar(10)
+);
+
+Insert data
+=> insert into Students values('Ramesh', '8A', 78, '2017-07-15', 'Physics'); - invalid
+=> insert into Students values('Ramesh', 78, '2017-07-15', '8A', 'Physics'); - valid
+=> insert into Students(name, class, marks, dob, subject) values('Ramesh', '8A', 78, '2017-07-15', 'Physics');
+=> insert into Students(name, marks, subject) values('Mahesh', 71, 'Math');
+
+
+
+=> alter table Students add column email varchar(30);
+
+=> drop table Students;
+=> create table Students(
+	name varchar(30),
+	email varchar(30) unique not null,
+	marks int default 50,
+	dob date,
+	class varchar(4),
+	subject varchar(10)
+);
+
+
+
+=> insert into Students(name, marks, email) values('Mukesh Kumar', 93, 'mukesh@gmail.com');
+=> insert into Students(name, marks, email) values('Mukesh Mittal', 82, 'mukesh@gmail.com');
+
+
+
