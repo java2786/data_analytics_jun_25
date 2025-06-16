@@ -113,14 +113,3 @@ Insert into Students(name, subject1, subject2, subject3) values(‘Rajesh’, �
 
 
 
-
-
-
-
-
-
-
-
-
-
-
