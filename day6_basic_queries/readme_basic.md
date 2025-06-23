@@ -35,8 +35,10 @@ insert into Students(name, class, marks) values
 ('Dinesh', '10C', 78), 
 ('Mahesh', '9A', 93), 
 ('Suresh', '8A', 88), 
+('Ganesh', '9A', 89), 
 ('Mukesh', '9B', 95);
 ```
+
 
 ## Interview Questions
 - Select all the student from 9b class
@@ -73,16 +75,48 @@ marks > 80;
 ```
 
 
-## Aggeregate Functions
+## Aggeregate Functions - count, sum, avg, min, max
 - Count the students in class 9B
 ```sql
-
+select count(name) as 9B_Students from Students
+where class="9B";
 ```
 
 - Find average scrore 
 ```sql
+select sum(marks)/count(marks) from Students;
 
+select avg(marks) from Students;
 ```
+
+- Find students who scored more than average
+```sql
+select * from Students 
+where marks > (select avg(marks) from Students);
+```
+
+- Find students who scored less than average
+```sql
+select * from Students 
+where marks < (select avg(marks) from Students);
+```
+
+- Find student maximum score
+```sql
+
+select * from Students where marks=(
+select max(marks) from Students
+);
+```
+
+- Find student minimum score
+```sql
+select name, class, marks from Students where marks=(
+select min(marks) from Students
+);
+```
+
+
 
 
 
