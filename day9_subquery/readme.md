@@ -34,4 +34,23 @@ on Scores.student_id = Students.roll and Scores.sub_id=2;
 
 
 ## Problems to practice
-
+1. List all students from class '9A'
+2. List names of all students whose name starts with 'A'
+3. Find the students who scored ≥80 in any subject
+4. List students who scored below 35 (fail) in any subject
+5. Find the student IDs who scored more than 90 marks
+6. List the top 5 highest marks in the Scores table
+7. Count total students in class '10A'
+8. Count the number of distinct classes
+9. Find how many subjects are listed in the Subjects table
+10. Find the average marks scored by student with roll = 2
+11. List all student roll numbers who appeared for at least 2 subjects
+12. List all subject IDs for which marks are more than 80
+13. Get the minimum and maximum marks recorded in Scores table
+14. Find how many students are there in each class
+15. List all student IDs who got full marks (100)
+16. Find the student with the least marks in the Scores table
+17. Find students whose names are exactly 4 characters long
+18. Find the student(s) who got highest marks in any subject
+19. Find all students who scored ≥80 in subject 'Math'
+20. List students whose names contain 'e' and are from class '10B'
