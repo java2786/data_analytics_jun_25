@@ -127,7 +127,7 @@ INSERT INTO book_reviews (book_id, review, author_id) VALUES
 ## Queries
 - Show the name of each author together with the title of the book they wrote and the year in which that book was published.
 - Show the name of each author together with the title of the book they wrote and the year in which that book was published. Show only books published after 1940.
-- Show Books Adapted Within 4 Years and Rated Lower Than the Adaptation
+- Show Books Adapted Within 50 Years and Rated Lower Than the Adaptation
 
 
 ## Solutions
