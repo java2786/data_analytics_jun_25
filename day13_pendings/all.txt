@@ -1,0 +1,35 @@
+10. Data Export and Import
+11. Security and User Management
+12. Backup and Recovery
+13. MySQL Tools and Interfaces
+14. Basic Data Analysis Techniques
+
+SHOW VARIABLES LIKE 'secure_file_priv';
+-- /var/lib/mysql-files
+
+SELECT * FROM tutorial.Items
+INTO OUTFILE '/var/lib/mysql-files/product.csv'
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+
+
+LOAD DATA INFILE '/var/lib/mysql-files/product.csv'
+INTO TABLE Items
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 0 ROWS;  
+
+
+mysqldump -u root -proot tutorial > abc.sql
+
+mysql -u root -proot tutorial < abc.sql 
+
+
+c:/program files/sql server/8.0/bin
+mysql.exe -> command
+
+mysql -u root -proot
+
+mysqldump.exe 
