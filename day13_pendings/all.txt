@@ -1,9 +1,5 @@
-10. Data Export and Import
-11. Security and User Management
-12. Backup and Recovery
-13. MySQL Tools and Interfaces
-14. Basic Data Analysis Techniques
 
+1. Data Export and Import
 SHOW VARIABLES LIKE 'secure_file_priv';
 -- /var/lib/mysql-files
 
@@ -22,6 +18,9 @@ LINES TERMINATED BY '\n'
 IGNORE 0 ROWS;  
 
 
+
+
+2. Backup and Recovery
 mysqldump -u root -proot tutorial > abc.sql
 
 mysql -u root -proot tutorial < abc.sql 
@@ -33,3 +32,108 @@ mysql.exe -> command
 mysql -u root -proot
 
 mysqldump.exe 
+
+=======
+
+mysqldump -uroot -proot123 tutorial > full_backup.sql
+mysql -uroot -proot123 tutorial < full_backup.sql
+
+
+
+3. Security and User Management
+
+User Roles and Permissions
+
+Example: 
+    -- Grant SELECT access to ramesh for tutorial
+    CREATE USER 'ramesh'@'%' IDENTIFIED BY 'ramesh@123';
+    GRANT SELECT, INSERT ON tutorial.* TO 'ramesh'@'%';
+    FLUSH PRIVILEGES;
+
+Revoke Access
+    REVOKE SELECT ON tutorial.* FROM 'ramesh'@'%';
+    DROP USER 'ramesh'@'%';
+
+
+
+
+4. MySQL Tools and Interfaces
+
+MySQL Tools and Interfaces
+    MySQL Workbench:
+        Connect to localhost:3306
+        Use Query tab to write SQL
+        Visualize data from tables
+    DBeaver or DataGrip:
+        Lightweight GUI alternatives
+        Easy for schema and ER modeling
+    Command Line Clients:
+        mysql CLI inside Docker container
+        mysqldump, mysqladmin for DBA operations
+
+
+
+5. Basic Data Analysis Techniques
+Sample Table: student_scores
+-- Highest Marks
+SELECT * FROM student_scores ORDER BY marks DESC LIMIT 1;
+
+-- Average Marks
+SELECT AVG(marks) FROM student_scores;
+
+-- Count students with marks > 80
+SELECT COUNT(*) FROM student_scores WHERE marks > 80;
+
+-- Group by Score Ranges
+SELECT
+  CASE
+    WHEN marks >= 90 THEN 'Excellent'
+    WHEN marks >= 75 THEN 'Good'
+    ELSE 'Needs Improvement'
+  END AS category,
+  COUNT(*) AS student_count
+FROM student_scores
+GROUP BY category;
+
+
+
+
+
+
+
+
+
+
+
+Assignments
+Assignment 1: Import and Analyze Employee CSV
+Create table employees (id, name, salary)
+Import from CSV using Docker volume
+Write queries to find: - Highest salary - Count of employees above ₹50,000 - Average salary
+Assignment 2: Secure Access for Meeta (User Access)
+Create user meeta with password meeta@123
+Grant only SELECT and INSERT permissions on employees
+Revoke INSERT after use
+Assignment 3: Backup Strategy
+Take full backup using mysqldump
+Drop the student_scores table
+Restore from backup and verify
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
